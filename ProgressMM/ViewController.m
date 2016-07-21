@@ -20,23 +20,18 @@
     
     // 在 nav 上面添加progressView
     [self.navigationController.view insertSubview:self.progressView belowSubview:self.navigationController.navigationBar];
-    CGFloat SW = [UIScreen mainScreen].bounds.size.width;
-    CGFloat SH = [UIScreen mainScreen].bounds.size.height;
-    
-    self.view.frame = CGRectMake(0, 66, SW, SH);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self.view addSubview:self.progressView];
     [self.progressView startAnim];
-    [self performSelector:@selector(stopAnim) withObject:nil afterDelay:3];
+    [self performSelector:@selector(stopAnim) withObject:nil afterDelay:2];
     
 }
 
 - (void)stopAnim{
     [self.progressView endAnim];
-    [self.progressView removeProgressView];
-    self.progressView = nil;
+//    [self.progressView removeProgressView];
+//    self.progressView = nil;
 }
 
 #pragma mark
